@@ -10,3 +10,5 @@ weight_kg DECIMAL,
 PRIMARY KEY (id));
 CREATE TABLE
 
+
+ALTER TABLE animals ADD COLUMN species TEXT;
