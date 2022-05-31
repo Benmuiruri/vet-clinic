@@ -30,9 +30,7 @@ COMMIT;
 SELECT COUNT(*) FROM animals;
 SELECT COUNT(*) FROM animals WHERE escape_attempts > 0;
 SELECT AVG(weight_kg) FROM animals;
-SELECT COUNT(escape_attempts) FROM animals WHERE neutered = 't';
-SELECT COUNT(escape_attempts) FROM animals WHERE neutered = 'f';
-SELECT MIN(weight_kg) FROM animals WHERE species = 'digimon';
-SELECT MIN(weight_kg) FROM animals WHERE species = 'pokemon';
-SELECT AVG(escape_attempts) FROM animals WHERE species = 'pokemon' AND date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31';
-SELECT AVG(escape_attempts) FROM animals WHERE species = 'digimon' AND date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31';
+SELECT neutered, COUNT(escape_attempts) FROM animals GROUP BY neutered;
+SELECT species, MIN(weight_kg) FROM animals GROUP BY species;
+SELECT species, AVG(escape_attempts) FROM animals GROUP BY species, date_of_birth HAVING date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31';
+
