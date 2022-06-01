@@ -24,3 +24,13 @@ INSERT INTO species(name) VALUES('Pokemon');
 INSERT INTO species(name) VALUES('Digimon');
 
 INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES ('Agumon', 'Feb 3, 1991', 0, TRUE, 10.23);
+
+UPDATE animals SET species_id = 2 WHERE name LIKE '%mon%';
+UPDATE animals SET species_id = 1 WHERE species_id is NULL;
+
+UPDATE animals SET owner_id = 1 WHERE name = 'Agumon';
+UPDATE animals SET owner_id = 2 WHERE name = 'Gabumon';
+UPDATE animals SET owner_id = 3 WHERE name = 'Devimon';
+UPDATE animals SET owner_id = 3 WHERE name = 'Plantmon';
+UPDATE animals SET owner_id = 4 WHERE name = 'Squirtle' OR name = 'Blossom';
+UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';

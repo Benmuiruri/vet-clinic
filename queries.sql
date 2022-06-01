@@ -34,7 +34,3 @@ SELECT neutered, Max(escape_attempts) FROM animals GROUP BY neutered;
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 SELECT species, AVG(escape_attempts) FROM animals GROUP BY species, date_of_birth HAVING date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31';
 
-
-UPDATE animals SET species_id = 2 WHERE name LIKE '%mon%';
-UPDATE animals SET species_id = 1 WHERE species_id is NULL;
-
