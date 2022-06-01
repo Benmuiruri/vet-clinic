@@ -22,3 +22,5 @@ INSERT INTO owners(full_name, age) VALUES ('Jodie Whittaker', 34);
 
 INSERT INTO species(name) VALUES('Pokemon');
 INSERT INTO species(name) VALUES('Digimon');
+
+INSERT INTO animals (name, date_of_birth, escape_attempts, neutered, weight_kg) VALUES ('Agumon', 'Feb 3, 1991', 0, TRUE, 10.23);
