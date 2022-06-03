@@ -48,3 +48,36 @@ ALTER TABLE animals ADD COLUMN species_id INT;
 ALTER TABLE animals ADD CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id);
 ALTER TABLE animals ADD COLUMN owner_id INT;
 ALTER TABLE animals ADD CONSTRAINT fk_owner FOREIGN KEY(owner_id) REFERENCES owners(id);
+
+/* Create vets table */
+CREATE TABLE vets(
+  id SERIAL PRIMARY KEY,
+  name TEXT,
+  age INT,
+  date_of_graduation DATE
+);
+
+/* create specialties table */
+
+CREATE TABLE specialties (
+  vet_name TEXT,
+  species_name TEXT,
+);
+
+CREATE TABLE visits (
+  animal_species TEXT,
+  vet_name TEXT,
+  visit_date DATE,
+);
+
+ALTER TABLE visits DROP CONSTRAINT visits_pkey;
+
+ALTER TABLE visits ADD COLUMN ID SERIAL PRIMARY KEY;
+
+DROP TABLE IF EXISTS specialties;
+
+ALTER TABLE specialties ADD COLUMN ID SERIAL PRIMARY KEY;
+
+ALTER TABLE specialties ALTER COLUMN species_name TYPE TEXT;
+
+ALTER TABLE visits RENAME COLUMN animal_species TO animal_name;
