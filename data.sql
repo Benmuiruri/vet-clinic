@@ -38,3 +38,53 @@ UPDATE animals SET owner_id = 3 WHERE name = 'Devimon';
 UPDATE animals SET owner_id = 3 WHERE name = 'Plantmon';
 UPDATE animals SET owner_id = 4 WHERE name = 'Squirtle' OR name = 'Blossom';
 UPDATE animals SET owner_id = 5 WHERE name = 'Angemon' OR name = 'Boarmon';
+
+/* Insert data for vets */
+INSERT INTO vets(name, age, date_of_graduation) VALUES('William Tatcher', 45, 'Apr 23, 2000');
+INSERT INTO vets(name, age, date_of_graduation) VALUES('Maisy Smith', 26, 'Jan 17, 2019');
+INSERT INTO vets(name, age, date_of_graduation) VALUES('Stephanie Mendez', 64, 'May 4, 1981');
+INSERT INTO vets(name, age, date_of_graduation) VALUES('Jack Harkness', 38, 'Jun 8, 2008');
+
+/* Insert data for specialties */
+INSERT INTO specialties(vet_name, species_name) VALUES('William Tatcher', 'Pokemon');
+INSERT INTO specialties(vet_name, species_name) VALUES('Stephanie Mendez', 'Digimon');
+INSERT INTO specialties(vet_name, species_name) VALUES('Stephanie Mendez', 'Pokemon');
+INSERT INTO specialties(vet_name, species_name) VALUES('Jack Harkness', 'Digimon');
+
+
+/* Insert data for visits */
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Agumon', 'William Tatcher', 'May 24, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Agumon', 'Stephanie Mendez', 'Jul 22, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Gabumon', 'Jack Harkness', 'Feb 2, 2021');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Pikachu', 'Maisy Smith', 'Jan 5, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Pikachu', 'Maisy Smith', 'Mar 8, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Pikachu', 'Maisy Smith', 'May 14, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Deimon', 'Stephanie Mendez', 'May 4, 2021');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Charmander', 'Jack Harkness', 'Feb 24, 2021');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Plantmon', 'Maisy Smith', 'Dec 21, 2019');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Plantmon', 'William Tatcher', 'Aug 10, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Plantmon', 'Maisy Smith', 'Apr 7, 2021');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Squirtle', 'Stephanie Mendez', 'Sep 29, 2019');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Angemon', 'Jack Harkness', 'Oct 3, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Angemon', 'Jack Harkness', 'Nov 4, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Boarmon', 'Maisy Smith', 'Jan 24, 2019');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Boarmon', 'Maisy Smith', 'May 15, 2019');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Boarmon', 'Maisy Smith', 'Feb 27, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Boarmon', 'Maisy Smith', 'Aug 3, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Blossom', 'Stephanie Mendez', 'May 24, 2020');
+INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Blossom', 'William Tatcher', 'Jan 11, 2021');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
