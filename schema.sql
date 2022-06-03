@@ -78,5 +78,6 @@ DROP TABLE IF EXISTS specialties;
 
 ALTER TABLE specialties ADD COLUMN ID SERIAL PRIMARY KEY;
 
-
 ALTER TABLE specialties ALTER COLUMN species_name TYPE TEXT;
+
+ALTER TABLE visits RENAME COLUMN animal_species TO animal_name;
