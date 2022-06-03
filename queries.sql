@@ -125,3 +125,6 @@ GROUP BY owners.full_name
 ORDER BY animals_owned DESC
 LIMIT 1;
 
+/* Query specialties and visits tables */
+select * from visits where vet_name = 'William Tatcher' order by visit_date DESC LIMIT 1;
+

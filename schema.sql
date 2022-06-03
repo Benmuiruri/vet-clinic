@@ -60,18 +60,23 @@ CREATE TABLE vets(
 /* create specialties table */
 
 CREATE TABLE specialties (
-  vet_id INT,
-  species_id INT,
-  PRIMARY KEY (vet_id, species_id)
+  vet_name TEXT,
+  species_name TEXT,
 );
 
 CREATE TABLE visits (
   animal_species TEXT,
   vet_name TEXT,
   visit_date DATE,
-  PRIMARY KEY (animal_species, vet_name)
 );
 
 ALTER TABLE visits DROP CONSTRAINT visits_pkey;
 
 ALTER TABLE visits ADD COLUMN ID SERIAL PRIMARY KEY;
+
+DROP TABLE IF EXISTS specialties;
+
+ALTER TABLE specialties ADD COLUMN ID SERIAL PRIMARY KEY;
+
+
+ALTER TABLE specialties ALTER COLUMN species_name TYPE TEXT;

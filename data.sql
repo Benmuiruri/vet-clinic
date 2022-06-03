@@ -46,10 +46,11 @@ INSERT INTO vets(name, age, date_of_graduation) VALUES('Stephanie Mendez', 64, '
 INSERT INTO vets(name, age, date_of_graduation) VALUES('Jack Harkness', 38, 'Jun 8, 2008');
 
 /* Insert data for specialties */
-INSERT INTO specialties(vet_id, species_id) VALUES(1,1);
-INSERT INTO specialties(vet_id, species_id) VALUES(3,1);
-INSERT INTO specialties(vet_id, species_id) VALUES(3,2);
-INSERT INTO specialties(vet_id, species_id) VALUES(4,1);
+INSERT INTO specialties(vet_name, species_name) VALUES('William Tatcher', 'Pokemon');
+INSERT INTO specialties(vet_name, species_name) VALUES('Stephanie Mendez', 'Digimon');
+INSERT INTO specialties(vet_name, species_name) VALUES('Stephanie Mendez', 'Pokemon');
+INSERT INTO specialties(vet_name, species_name) VALUES('Jack Harkness', 'Digimon');
+
 
 /* Insert data for visits */
 INSERT INTO visits(animal_species, vet_name, visit_date) VALUES('Agumon', 'William Tatcher', 'May 24, 2020');
