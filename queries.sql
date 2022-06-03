@@ -167,8 +167,9 @@ select * from visits order by visits.visit_date desc limit 1;
 
 /* How many visits were with a vet that did not specialize in that animal's species? */
 
-select visits.animal_name, visits.vet_name, visits.visit_date from visits full
-OUTER join specialties on visits.vet_name = specialties.vet_name where specialties.vet_name is null;
+select COUNT(visits.visit_date) from visits full
+OUTER join specialties on visits.vet_name = specialties.vet_name where specialties.vet_name is null ORDER BY COUNT DESC
+LIMIT 1;
 
 /* What specialty should Maisy Smith consider getting ? Look for the species she gets the most. */
 
