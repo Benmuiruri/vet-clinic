@@ -129,21 +129,21 @@ LIMIT 1;
 
 /* Who was the last animal seen by William Tatcher */
 
-select * from visits where vet_name = 'William Tatcher' order by visit_date DESC LIMIT 1;
+select animal_name from visits where vet_id = 1 order by visit_date DESC LIMIT 1;
 
 /* How many different animals did Stephanie Mendez see ? */
 
-select MAX(specialties.vet_name), count(species_name) as species_seen from specialties WHERE specialties.vet_name = 'Stephanie Mendez';
+select MAX(specialties.vet_name), count(species_name) as species_seen from specialties WHERE specialties.vet_id = 3;
 
 /* List all vets and their specialties, including vets with no specialties */
 select vets.name,
     specialties.species_name
 from vets
-    full OUTER join specialties on vets.name = specialties.vet_name;
+    full OUTER join specialties on vets.id = specialties.vet_id;
 
 /* List all animals that visited Stephanie Mendez between April 1st and August 30th, 2020. */
 
-select visits.animal_name as animals_visited, visits.visit_date from visits where visits.vet_name = 'Stephanie Mendez' AND (visits.visit_date  >= '2020-04-01'
+select visits.animal_name as animals_visited, visits.visit_date from visits where visits.vet_id = 3 AND (visits.visit_date  >= '2020-04-01'
     AND visits.visit_date <= '2020-08-30');
 
 /* What animal has the most visits to vets ? */
@@ -155,10 +155,10 @@ ORDER BY COUNT DESC LIMIT 1;
 
 /* Who was Maisy Smith 's first visit? */
 
-select visits.animal_name as animals_visited,
+select visits.animal_name as first_animal_visited,
     visits.visit_date
 from visits
-where visits.vet_name = 'Maisy Smith' ORDER BY visits.visit_date ASC
+where visits.vet_id= 2 ORDER BY visits.visit_date ASC
 LIMIT 1;
 
 /* Details for most recent visit: animal information, vet information, and date of visit. */
@@ -168,7 +168,7 @@ select * from visits order by visits.visit_date desc limit 1;
 /* How many visits were with a vet that did not specialize in that animal's species? */
 
 select COUNT(visits.visit_date) from visits full
-OUTER join specialties on visits.vet_name = specialties.vet_name where specialties.vet_name is null ORDER BY COUNT DESC
+OUTER join specialties on visits.vet_id = specialties.vet_id where specialties.vet_id is null ORDER BY COUNT DESC
 LIMIT 1;
 
 /* What specialty should Maisy Smith consider getting ? Look for the species she gets the most. */
