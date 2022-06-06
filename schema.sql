@@ -103,5 +103,12 @@ UPDATE visits SET animal_id = 7 WHERE animal_name = 'Squirtle';
 UPDATE visits SET animal_id = 8 WHERE animal_name = 'Charmander';
 UPDATE visits SET animal_id = 9 WHERE animal_name = 'Plantmon';
 UPDATE visits SET animal_id = 10 WHERE animal_name = 'Pikachu';
-
 UPDATE visits SET animal_name = 'Devimon' WHERE animal_name = 'Deimon';
+
+/* update specialties table colums */
+
+ALTER TABLE specialties ADD COLUMN vet_id INT;
+UPDATE specialties SET vet_id = 1 WHERE vet_name = 'William Tatcher';
+UPDATE specialties SET vet_id = 2 WHERE vet_name = 'Maisy Smith';
+UPDATE specialties SET vet_id = 3 WHERE vet_name = 'Stephanie Mendez';
+UPDATE specialties SET vet_id = 4 WHERE vet_name = 'Jack Harkness';
