@@ -81,3 +81,11 @@ ALTER TABLE specialties ADD COLUMN ID SERIAL PRIMARY KEY;
 ALTER TABLE specialties ALTER COLUMN species_name TYPE TEXT;
 
 ALTER TABLE visits RENAME COLUMN animal_species TO animal_name;
+
+/* update visits table colums */
+
+ALTER TABLE visits ADD COLUMN vet_id INT;
+
+UPDATE visits SET vet_id = 1 WHERE vet_name = 'William Tatcher';
+
+ALTER TABLE visits ADD COLUMN animal_id INT;
