@@ -81,3 +81,38 @@ ALTER TABLE specialties ADD COLUMN ID SERIAL PRIMARY KEY;
 ALTER TABLE specialties ALTER COLUMN species_name TYPE TEXT;
 
 ALTER TABLE visits RENAME COLUMN animal_species TO animal_name;
+
+/* update visits table colums */
+
+ALTER TABLE visits ADD COLUMN vet_id INT;
+
+UPDATE visits SET vet_id = 1 WHERE vet_name = 'William Tatcher';
+UPDATE visits SET vet_id = 2 WHERE vet_name = 'Maisy Smith';
+UPDATE visits SET vet_id = 3 WHERE vet_name = 'Stephanie Mendez';
+UPDATE visits SET vet_id = 4 WHERE vet_name = 'Jack Harkness';
+
+ALTER TABLE visits ADD COLUMN animal_id INT;
+
+UPDATE visits SET animal_id = 1 WHERE animal_name = 'Agumon';
+UPDATE visits SET animal_id = 2 WHERE animal_name = 'Gabumon';
+UPDATE visits SET animal_id = 3 WHERE animal_name = 'Devimon';
+UPDATE visits SET animal_id = 4 WHERE animal_name = 'Boarmon';
+UPDATE visits SET animal_id = 5 WHERE animal_name = 'Blossom';
+UPDATE visits SET animal_id = 6 WHERE animal_name = 'Angemon';
+UPDATE visits SET animal_id = 7 WHERE animal_name = 'Squirtle';
+UPDATE visits SET animal_id = 8 WHERE animal_name = 'Charmander';
+UPDATE visits SET animal_id = 9 WHERE animal_name = 'Plantmon';
+UPDATE visits SET animal_id = 10 WHERE animal_name = 'Pikachu';
+UPDATE visits SET animal_name = 'Devimon' WHERE animal_name = 'Deimon';
+
+/* update specialties table colums */
+
+ALTER TABLE specialties ADD COLUMN vet_id INT;
+UPDATE specialties SET vet_id = 1 WHERE vet_name = 'William Tatcher';
+UPDATE specialties SET vet_id = 2 WHERE vet_name = 'Maisy Smith';
+UPDATE specialties SET vet_id = 3 WHERE vet_name = 'Stephanie Mendez';
+UPDATE specialties SET vet_id = 4 WHERE vet_name = 'Jack Harkness';
+
+ALTER TABLE specialties ADD COLUMN species_id INT;
+UPDATE specialties SET species_id = 1 WHERE species_name = 'Pokemon';
+UPDATE specialties SET species_id = 2 WHERE species_name = 'Digimon';
