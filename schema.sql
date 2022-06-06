@@ -92,3 +92,16 @@ UPDATE visits SET vet_id = 3 WHERE vet_name = 'Stephanie Mendez';
 UPDATE visits SET vet_id = 4 WHERE vet_name = 'Jack Harkness';
 
 ALTER TABLE visits ADD COLUMN animal_id INT;
+
+UPDATE visits SET animal_id = 1 WHERE animal_name = 'Agumon';
+UPDATE visits SET animal_id = 2 WHERE animal_name = 'Gabumon';
+UPDATE visits SET animal_id = 3 WHERE animal_name = 'Devimon';
+UPDATE visits SET animal_id = 4 WHERE animal_name = 'Boarmon';
+UPDATE visits SET animal_id = 5 WHERE animal_name = 'Blossom';
+UPDATE visits SET animal_id = 6 WHERE animal_name = 'Angemon';
+UPDATE visits SET animal_id = 7 WHERE animal_name = 'Squirtle';
+UPDATE visits SET animal_id = 8 WHERE animal_name = 'Charmander';
+UPDATE visits SET animal_id = 9 WHERE animal_name = 'Plantmon';
+UPDATE visits SET animal_id = 10 WHERE animal_name = 'Pikachu';
+
+UPDATE visits SET animal_name = 'Devimon' WHERE animal_name = 'Deimon';
