@@ -87,5 +87,8 @@ ALTER TABLE visits RENAME COLUMN animal_species TO animal_name;
 ALTER TABLE visits ADD COLUMN vet_id INT;
 
 UPDATE visits SET vet_id = 1 WHERE vet_name = 'William Tatcher';
+UPDATE visits SET vet_id = 2 WHERE vet_name = 'Maisy Smith';
+UPDATE visits SET vet_id = 3 WHERE vet_name = 'Stephanie Mendez';
+UPDATE visits SET vet_id = 4 WHERE vet_name = 'Jack Harkness';
 
 ALTER TABLE visits ADD COLUMN animal_id INT;
