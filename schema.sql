@@ -116,3 +116,18 @@ UPDATE specialties SET vet_id = 4 WHERE vet_name = 'Jack Harkness';
 ALTER TABLE specialties ADD COLUMN species_id INT;
 UPDATE specialties SET species_id = 1 WHERE species_name = 'Pokemon';
 UPDATE specialties SET species_id = 2 WHERE species_name = 'Digimon';
+
+/* Database performance */
+ALTER TABLE owners
+ADD COLUMN email VARCHAR(120);
+INSERT INTO visits (animal_id, vet_id, visit_date)
+SELECT *
+FROM (
+    SELECT id
+    FROM animals
+  ) animal_ids,
+  (
+    SELECT id
+    FROM vets
+  ) vets_ids,
+  generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
