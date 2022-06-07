@@ -8,6 +8,16 @@
 
 - MySQL
 - git
+  
+## DB perfomance before optimization
+
+<img src="./images/one_db.png">
+<img src="./images/three_db.png">
+
+## DB perfomance after optimization
+
+<img src="./images/one_db2.png">
+<img src="./images/three_db2.png">
 
 ## Getting Started
 

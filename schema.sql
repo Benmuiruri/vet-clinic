@@ -116,3 +116,32 @@ UPDATE specialties SET vet_id = 4 WHERE vet_name = 'Jack Harkness';
 ALTER TABLE specialties ADD COLUMN species_id INT;
 UPDATE specialties SET species_id = 1 WHERE species_name = 'Pokemon';
 UPDATE specialties SET species_id = 2 WHERE species_name = 'Digimon';
+
+/* Database performance */
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+
+INSERT INTO visits (animal_id, vet_id, visit_date)
+SELECT *
+FROM (
+    SELECT id
+    FROM animals
+  ) animal_ids,
+  (
+    SELECT id
+    FROM vets
+  ) vets_ids,
+  generate_series('1980-01-01'::timestamp, '2021-01-01', '4 hours') visit_timestamp;
+
+  insert into owners (full_name, email) select 'Owner ' || generate_series(1,2500000), 'owner_' || generate_series(1,2500000) || '@mail.com';
+
+  alter table visits drop column animal_name;
+
+  alter table visits drop column vet_name;
+
+  CREATE INDEX animal_id_asc ON visits(animal_id ASC);
+
+  CREATE INDEX owners_id_asc ON owners (email ASC);
+
+
+CREATE INDEX vet_id_asc ON visits(vet_id, id);
+
