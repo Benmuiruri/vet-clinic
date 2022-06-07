@@ -19,6 +19,9 @@
 <img src="./images/one_db2.png">
 <img src="./images/three_db2.png">
 
+## DB Schema
+<img src="./images/schema2.png">
+
 ## Getting Started
 
 This repository includes files with plain SQL that can be used to recreate a database:
