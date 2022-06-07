@@ -143,5 +143,20 @@ FROM (
   CREATE INDEX owners_id_asc ON owners (email ASC);
 
 
-CREATE INDEX vet_id_asc ON visits(vet_id, id);
+CREATE INDEX mutli_index_id ON visits(vet_id, animal_id);
+
+ALTER TABLE animals ADD CONSTRAINT fk_species FOREIGN KEY(species_id) REFERENCES species(id);
+
+ALTER TABLE specialties ADD CONSTRAINT fk_vets FOREIGN KEY (vet_id) REFERENCES vets(id);
+
+ALTER TABLE specialties ADD CONSTRAINT fk_species_id FOREIGN KEY (species_id) REFERENCES species(id);
+
+ALTER TABLE visits ADD CONSTRAINT fk_vet_id FOREIGN KEY (vet_id) REFERENCES vets(id);
+
+DELETE FROM visits WHERE animal_id = 10;
+DELETE FROM visits WHERE animal_id = 9;
+DELETE FROM visits WHERE animal_id = 8;
+
+
+ALTER TABLE visits ADD CONSTRAINT fk_animal FOREIGN KEY (animal_id) REFERENCES animals(id);
 

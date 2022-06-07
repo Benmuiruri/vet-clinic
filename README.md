@@ -20,7 +20,7 @@
 <img src="./images/three_db2.png">
 
 ## DB Schema
-<img src="./images/schema.png">
+<img src="./images/schema2.png">
 
 ## Getting Started
 
